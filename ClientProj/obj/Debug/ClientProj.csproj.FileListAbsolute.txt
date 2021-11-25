@@ -1,0 +1,19 @@
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.exe.config
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.exe
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.pdb
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.csprojAssemblyReference.cache
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.csproj.CoreCompileInputs.cache
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.exe
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.pdb
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.csproj.AssemblyReference.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.csproj.SuggestedBindingRedirects.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\MainWindow.baml
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\MainWindow.g.cs
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\ClientProj_MarkupCompile.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.g.resources
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.csproj.CoreCompileInputs.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.exe
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.pdb
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.exe.config
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.exe
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.pdb

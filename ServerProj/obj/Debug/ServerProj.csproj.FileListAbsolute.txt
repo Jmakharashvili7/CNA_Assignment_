@@ -1,0 +1,15 @@
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ServerProj.exe.config
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ServerProj.exe
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ServerProj.pdb
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csprojAssemblyReference.cache
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.CoreCompileInputs.cache
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.exe
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.pdb
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\ServerProj.exe.config
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\ServerProj.exe
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\ServerProj.pdb
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.AssemblyReference.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.SuggestedBindingRedirects.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.CoreCompileInputs.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.exe
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.pdb

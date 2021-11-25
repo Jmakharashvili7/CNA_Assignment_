@@ -4,30 +4,34 @@ using System.Net.Sockets;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Runtime.Serialization.Formatters.Binary;
+using Packets;
 
 namespace ClientProj
 {
     public class Client
     {
-        private TcpClient       _TcpClient;
-        private NetworkStream   _stream;
-        private StreamWriter    _writer;
-        private StreamReader    _reader;
-        private MainWindow      _form;
+        private TcpClient       m_TcpClient;
+        private NetworkStream   m_Stream;
+        private BinaryWriter    m_BinaryWriter;
+        private BinaryReader    m_BinaryReader;
+        private MainWindow      m_MainWindow;
+        private BinaryFormatter m_BinaryFormatter;
 
         public Client()
         {
-            _TcpClient = new TcpClient();
+            m_TcpClient = new TcpClient();
+            m_BinaryFormatter = new BinaryFormatter();
         }
 
         public bool Connect(string ipAddress, int port)
         {
             try
             {
-                _TcpClient.Connect(ipAddress, port);
-                _stream = _TcpClient.GetStream();
-                _writer = new StreamWriter(_stream, Encoding.UTF8);
-                _reader = new StreamReader(_stream, Encoding.UTF8);
+                m_TcpClient.Connect(ipAddress, port);
+                m_Stream = m_TcpClient.GetStream();
+                m_BinaryWriter = new BinaryWriter(m_Stream, Encoding.UTF8);
+                m_BinaryReader = new BinaryReader(m_Stream, Encoding.UTF8);
 
                 return true;
             }
@@ -40,30 +44,67 @@ namespace ClientProj
 
         public void Run()
         {
-            _form = new MainWindow(this);
+            m_MainWindow = new MainWindow(this);
 
             // Create a new thread to proccess the server response
             Thread processServerResponse = new Thread(new ThreadStart(ProcessServerResponse));
             processServerResponse.Start();
 
-            _form.ShowDialog();
+            m_MainWindow.ShowDialog();
         }
 
-        public void SendMessage(string message)
+        public void SendMessage(Packet message)
         {
-            _writer.WriteLine(message);
-            _writer.Flush();
+            // initialize the memory stream
+            MemoryStream memoryStream = new MemoryStream();
+
+            m_BinaryFormatter.Serialize(memoryStream, message);
+
+            // Get byte array from the memory stream
+            byte[] buffer = memoryStream.GetBuffer();
+
+            // Write the size of the buffer and the buffer array to the stream
+            m_BinaryWriter.Write(buffer.Length);
+            m_BinaryWriter.Write(buffer);
+            m_BinaryWriter.Flush();
         }
 
         private void ProcessServerResponse()
         {
-            while (_TcpClient.Connected)
+            while (m_TcpClient.Connected)
             {
                 try
                 {
                     // read the input from the server and update the messagebox
-                    string message =_reader.ReadLine();
-                    _form.UpdateChatBox(message, "Server");
+                    int numberOfBytes; // temp int to store size of array
+
+                    // check the size of the array
+                    if ((numberOfBytes = m_BinaryReader.ReadInt32()) != -1)
+                    {
+                        // store the array
+                        byte[] buffer = m_BinaryReader.ReadBytes(numberOfBytes);
+
+                        // Create a new memory stream using the buffer
+                        MemoryStream ms = new MemoryStream(buffer);
+                        Packet recievedPacket = m_BinaryFormatter.Deserialize(ms) as Packet;
+
+                        if (recievedPacket != null)
+                        {
+                            switch (recievedPacket.GetPacketType())
+                            {
+                                case PacketType.ChatMessage:
+                                    ChatMessagePacket chatPacket = (ChatMessagePacket)recievedPacket;
+                                    m_MainWindow.UpdateChatBox(chatPacket.m_message, "Server");
+                                    break;
+                                case PacketType.ClientName:
+                                    break;
+                                case PacketType.PrivateMessage:
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
                 }
                 catch (Exception e)
                 {

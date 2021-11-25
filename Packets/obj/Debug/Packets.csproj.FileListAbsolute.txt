@@ -1,0 +1,6 @@
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\Packets\bin\Debug\Packets.dll
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\Packets\bin\Debug\Packets.pdb
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\Packets\obj\Debug\Packets.csproj.AssemblyReference.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\Packets\obj\Debug\Packets.csproj.CoreCompileInputs.cache
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\Packets\obj\Debug\Packets.dll
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\Packets\obj\Debug\Packets.pdb

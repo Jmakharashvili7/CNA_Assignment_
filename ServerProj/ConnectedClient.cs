@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
+using Packets;
 
 namespace ServerProj
 {
@@ -16,45 +17,69 @@ namespace ServerProj
         private Object          m_ReadLock;
         private Object          m_WriteLock;
         private NetworkStream   m_NetworkStream;
-        private BinaryWriter    m_StreamWriter;
-        private BinaryReader    m_StreamReader;
-        private BinaryFormatter m_BinaryFormater;
+        private BinaryWriter    m_BinaryWriter;
+        private BinaryReader    m_BinaryReader;
+        private BinaryFormatter m_BinaryFormatter;
 
         public ConnectedClient(Socket socket)
         {
+            // Initialize the locks
             m_WriteLock = new object();
             m_ReadLock = new object();
 
             m_Socket = socket;
-            m_BinaryFormater = new BinaryFormatter();
+            m_BinaryFormatter = new BinaryFormatter();
 
             m_NetworkStream = new NetworkStream(socket, true);
-            m_StreamReader = new BinaryReader(m_NetworkStream, Encoding.UTF8);
-            m_StreamWriter = new BinaryWriter(m_NetworkStream, Encoding.UTF8);
+            m_BinaryReader = new BinaryReader(m_NetworkStream, Encoding.UTF8);
+            m_BinaryWriter = new BinaryWriter(m_NetworkStream, Encoding.UTF8);
         }
 
         public void Close()
         {
             m_NetworkStream.Close();
-            m_StreamReader.Close();
-            m_StreamWriter.Close();
+            m_BinaryReader.Close();
+            m_BinaryWriter.Close();
             m_Socket.Close();
         }
 
-        public string Read()
+        public Packet Read()
         {
             lock (m_ReadLock)
             {
-                return m_StreamReader.ReadLine();
+                int numberOfBytes; // temp int to store size of array
+
+                // check the size of the array
+                if ((numberOfBytes = m_BinaryReader.ReadInt32()) != -1)
+                {
+                    // store the array
+                    byte[] buffer = m_BinaryReader.ReadBytes(numberOfBytes);
+
+                    // Create a new memory stream using the buffer
+                    MemoryStream ms = new MemoryStream(buffer);
+                    return m_BinaryFormatter.Deserialize(ms) as Packet;
+                }
+                else
+                    return null;
             }
         }
 
-        public void Send(String message)
+        public void Send(Packet message)
         {
             lock (m_ReadLock)
             {
-                m_StreamWriter.WriteLine(message);
-                m_StreamWriter.Flush();
+                // initialize the memory stream
+                MemoryStream memoryStream = new MemoryStream(); 
+
+                m_BinaryFormatter.Serialize(memoryStream, message);
+
+                // Get byte array from the memory stream
+                byte[] buffer = memoryStream.GetBuffer();
+
+                // Write the size of the buffer and the buffer array to the stream
+                m_BinaryWriter.Write(buffer.Length);
+                m_BinaryWriter.Write(buffer);
+                m_BinaryWriter.Flush();
             }
         }
     }

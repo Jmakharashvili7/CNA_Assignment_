@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Packets;
 
 namespace ClientProj
 {
@@ -65,7 +66,8 @@ namespace ClientProj
         // Used for updating the MessageBox locally
         private void SendMessage(string status)
         {
-            m_Client.SendMessage(messageInputBox.Text);
+            ChatMessagePacket message = new ChatMessagePacket(messageInputBox.Text);
+            m_Client.SendMessage(message);
 
             messageBox.Text += usernameBlock.Text + ": " + messageInputBox.Text + Environment.NewLine;
             messageBox.ScrollToEnd();

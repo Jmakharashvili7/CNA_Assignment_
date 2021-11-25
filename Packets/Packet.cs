@@ -29,7 +29,7 @@ namespace Packets
     {
         public string m_message;
 
-        ChatMessagePacket(string message)
+        public ChatMessagePacket(string message)
         {
             m_message = message;
             m_PacketType = PacketType.ChatMessage;

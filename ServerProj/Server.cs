@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Collections.Concurrent;
 using System.Threading;
+using Packets;
 
 namespace ServerProj
 {
@@ -51,15 +52,28 @@ namespace ServerProj
 
         private void ClientMethod(int index)
         {
-            string recievedMessage;
+            Packet recievedPacket;
 
-            m_Clients[index].Send("You have connected to the server - send 0 for valid options");
+            //m_Clients[index].Send("You have connected to the server - send 0 for valid options");
 
-            while ((recievedMessage = m_Clients[index].Read()) != null)
+            while ((recievedPacket = m_Clients[index].Read()) != null)
             {
-                GetReturnMessage(recievedMessage);
-
-                m_Clients[index].Send(GetReturnMessage(recievedMessage));
+                if (recievedPacket != null)
+                {
+                    switch (recievedPacket.GetPacketType())
+                    {
+                        case PacketType.ChatMessage:
+                            ChatMessagePacket chatPacket = (ChatMessagePacket)recievedPacket;
+                            m_Clients[index].Send(new ChatMessagePacket(GetReturnMessage(chatPacket.m_message)));
+                            break;
+                        case PacketType.ClientName:
+                            break;
+                        case PacketType.PrivateMessage:
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
 
             m_Clients[index].Close();

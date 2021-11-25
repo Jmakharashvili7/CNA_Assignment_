@@ -17,3 +17,9 @@ C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\Ser
 C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.pdb
 C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.exe.config
 C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.CopyComplete
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.exe
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\Packets.dll
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.pdb
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.exe.config
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\bin\Debug\Packets.pdb
+C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.CopyComplete

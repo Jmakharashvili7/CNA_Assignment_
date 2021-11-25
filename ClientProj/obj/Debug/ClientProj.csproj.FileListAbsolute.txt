@@ -17,3 +17,7 @@ C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\
 C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.exe.config
 C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.exe
 C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ClientProj\bin\Debug\ClientProj.pdb
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\MainWindow.baml
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\MainWindow.g.cs
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\ClientProj_MarkupCompile.cache
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ClientProj\obj\Debug\ClientProj.g.resources

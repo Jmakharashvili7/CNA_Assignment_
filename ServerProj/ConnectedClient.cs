@@ -6,17 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ServerProj
 {
     class ConnectedClient
     {
-        private Socket        m_Socket;
-        private NetworkStream m_NetworkStream;
-        private StreamWriter  m_StreamWriter;
-        private StreamReader  m_StreamReader;
-        private Object        m_ReadLock;
-        private Object        m_WriteLock;
+        private Socket          m_Socket;
+        private Object          m_ReadLock;
+        private Object          m_WriteLock;
+        private NetworkStream   m_NetworkStream;
+        private BinaryWriter    m_StreamWriter;
+        private BinaryReader    m_StreamReader;
+        private BinaryFormatter m_BinaryFormater;
 
         public ConnectedClient(Socket socket)
         {
@@ -24,10 +26,11 @@ namespace ServerProj
             m_ReadLock = new object();
 
             m_Socket = socket;
+            m_BinaryFormater = new BinaryFormatter();
 
             m_NetworkStream = new NetworkStream(socket, true);
-            m_StreamReader = new StreamReader(m_NetworkStream, Encoding.UTF8);
-            m_StreamWriter = new StreamWriter(m_NetworkStream, Encoding.UTF8);
+            m_StreamReader = new BinaryReader(m_NetworkStream, Encoding.UTF8);
+            m_StreamWriter = new BinaryWriter(m_NetworkStream, Encoding.UTF8);
         }
 
         public void Close()

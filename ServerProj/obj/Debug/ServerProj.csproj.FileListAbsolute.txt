@@ -13,3 +13,7 @@ C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\
 C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.CoreCompileInputs.cache
 C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.exe
 C:\Users\jmakh\Documents\Visual Studio 2019\Projects\Github\CNA\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.pdb
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.exe
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.pdb
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\bin\Debug\ClientProj.exe.config
+C:\Users\m017735i\OneDrive - Staffordshire University\Github\CNA_Assignment_\ServerProj\obj\Debug\ServerProj.csproj.CopyComplete

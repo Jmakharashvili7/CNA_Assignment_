@@ -40,25 +40,13 @@ namespace ClientProj
 
         public void Run()
         {
-            _form = new MainWindow()
+            _form = new MainWindow(this);
 
             // Create a new thread to proccess the server response
             Thread processServerResponse = new Thread(new ThreadStart(ProcessServerResponse));
             processServerResponse.Start();
-            
 
-
-            while ((userInput = Console.ReadLine()) != null)
-            {
-                _writer.WriteLine(userInput);
-                _writer.Flush();
-
-                ProcessServerResponse();
-
-                if (userInput == "Exit")
-                    break;
-            }
-            _TcpClient.Close();
+            _form.ShowDialog();
         }
 
         public void SendMessage(string message)
@@ -69,8 +57,19 @@ namespace ClientProj
 
         private void ProcessServerResponse()
         {
-            Console.WriteLine("Server Says: " + _reader.ReadLine());
-            Console.WriteLine();
+            while (_TcpClient.Connected)
+            {
+                try
+                {
+                    // read the input from the server and update the messagebox
+                    string message =_reader.ReadLine();
+                    _form.UpdateChatBox(message, "Server");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception" + e.Message);
+                }
+            }
         }
     }
 }

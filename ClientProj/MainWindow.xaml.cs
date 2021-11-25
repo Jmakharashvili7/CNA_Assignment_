@@ -37,38 +37,17 @@ namespace ClientProj
             SendButton.Click += SendMessageDispacher;
         }
 
-        public void UpdateChatBox(string message)
-        { 
-            messageBox.Dispatcher.Invoke(() =>
-            { 
-                messageBox.Text += message + Environment.NewLine;
-                // messageBox.ScrollToEnd(); not found
-            }
-        }
-
-        private void SendMessageButton_Click(object sender, RoutedEventArgs e)
+        // Used for updating the Chatbox from outside the client
+        public void UpdateChatBox(string message, string userName)
         {
-            if (messageInputBox.Text == "")
+            messageBox.Dispatcher.Invoke(() =>
             {
-                MessageBox.Show("No message in text box!", "Warning");
-            }
-            else
-            {
-                string message = messageInputBox.Text;
-                messageInputBox.Text = "";
-                if (usernameBlock.Text == "Template")
-                {
-                    MessageBox.Show("Please input your username!", "Warning");
-                    messageInputBox.Text = message;
-                }
-                else
-                {
-                    string name = usernameBlock.Text;
-                    messageBox.Text += name + ": " + message + "\n";
-                }
-            }
+                messageBox.Text += userName + ": " + message + Environment.NewLine;
+                messageBox.ScrollToEnd();
+            });
         }
 
+        // delegate for calling SendMessage function
         private void SendMessageDispacher(object sender, RoutedEventArgs e)
         {
             string message = messageInputBox.Text;
@@ -79,13 +58,17 @@ namespace ClientProj
                 Dispatcher.Invoke(DispatcherPriority.Normal, new Action<string>(SendMessage), message);
             };
 
-            // Creathe the thread and kick it started!
+            // Create the the thread and start it
             new Thread(ButtonThread).Start();
         }
 
+        // Used for updating the MessageBox locally
         private void SendMessage(string status)
         {
-            MessageDisplay.Text += usernameBlock.Text + ": " + status + "\n";
+            m_Client.SendMessage(messageInputBox.Text);
+
+            messageBox.Text += usernameBlock.Text + ": " + messageInputBox.Text + Environment.NewLine;
+            messageBox.ScrollToEnd();
         }
     }
 }

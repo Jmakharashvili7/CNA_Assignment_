@@ -90,7 +90,7 @@
             <CheckBox x:Name="EnableEncryptionCheckBox" 
                       Content="CheckBox" Canvas.Left="286" Canvas.Top="70" Width="17"/>
             <Button Content="Button" Height="3" Canvas.Left="237" Canvas.Top="293" Width="0"/>
-            <TextBlock x:Name="messageBox" Canvas.Left="12" Canvas.Top="35" TextWrapping="Wrap" Height="269" Width="266"/>
+            <TextBox x:Name="messageBox" Canvas.Left="12" Canvas.Top="35" TextWrapping="Wrap" Height="269" Width="266"/>
         </Canvas>
     </Canvas>
 </Window>
